@@ -1,0 +1,18 @@
+entryPoints:
+    http:
+      address: :80
+
+    https:
+      address: :443
+
+providers:
+  docker:
+    exposedByDefault: false
+
+certificatesResolvers:
+  myhttpchallenge:
+    acme:
+      email: "test@test.com"
+      storage: "/letsencrypt/acme.json"
+      httpChallenge:
+        entryPoint: http
